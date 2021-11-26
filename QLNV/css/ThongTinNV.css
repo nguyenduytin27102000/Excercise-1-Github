@@ -1,0 +1,9 @@
+/* css cho toàn trang */
+img {
+    width: 150px;
+    height: 150px;
+}
+body {
+    /* background-color: rgb(245, 196, 226); */
+    background-image: url("../image/bg.png");  
+}
