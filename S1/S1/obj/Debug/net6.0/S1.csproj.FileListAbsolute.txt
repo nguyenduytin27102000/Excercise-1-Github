@@ -1,0 +1,15 @@
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\bin\Debug\net6.0\S1.exe
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\bin\Debug\net6.0\S1.deps.json
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\bin\Debug\net6.0\S1.runtimeconfig.json
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\bin\Debug\net6.0\S1.dll
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\bin\Debug\net6.0\ref\S1.dll
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\bin\Debug\net6.0\S1.pdb
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\S1.csproj.AssemblyReference.cache
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\S1.GeneratedMSBuildEditorConfig.editorconfig
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\S1.AssemblyInfoInputs.cache
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\S1.AssemblyInfo.cs
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\S1.csproj.CoreCompileInputs.cache
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\S1.dll
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\ref\S1.dll
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\S1.pdb
+D:\code\thucTap\baiTap\code\tuan1\S1\S1\obj\Debug\net6.0\S1.genruntimeconfig.cache
