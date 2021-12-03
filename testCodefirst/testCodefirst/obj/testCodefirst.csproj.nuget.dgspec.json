@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\code\\thucTap\\test\\testCodefirst\\testCodefirst\\testCodefirst.csproj": {}
+    "D:\\code\\thucTap\\baiTap\\code\\S2\\Excercise-1-Github\\testCodefirst\\testCodefirst\\testCodefirst.csproj": {}
   },
   "projects": {
-    "D:\\code\\thucTap\\test\\testCodefirst\\testCodefirst\\testCodefirst.csproj": {
+    "D:\\code\\thucTap\\baiTap\\code\\S2\\Excercise-1-Github\\testCodefirst\\testCodefirst\\testCodefirst.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\code\\thucTap\\test\\testCodefirst\\testCodefirst\\testCodefirst.csproj",
+        "projectUniqueName": "D:\\code\\thucTap\\baiTap\\code\\S2\\Excercise-1-Github\\testCodefirst\\testCodefirst\\testCodefirst.csproj",
         "projectName": "testCodefirst",
-        "projectPath": "D:\\code\\thucTap\\test\\testCodefirst\\testCodefirst\\testCodefirst.csproj",
+        "projectPath": "D:\\code\\thucTap\\baiTap\\code\\S2\\Excercise-1-Github\\testCodefirst\\testCodefirst\\testCodefirst.csproj",
         "packagesPath": "C:\\Users\\user-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\code\\thucTap\\test\\testCodefirst\\testCodefirst\\obj\\",
+        "outputPath": "D:\\code\\thucTap\\baiTap\\code\\S2\\Excercise-1-Github\\testCodefirst\\testCodefirst\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

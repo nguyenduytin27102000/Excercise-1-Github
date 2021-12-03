@@ -11,44 +11,44 @@ namespace testCodefirst.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentsApiController : ControllerBase
+    public class ClassRoomsApiController : ControllerBase
     {
         private readonly StudentDBContext _context = new StudentDBContext();
 
-       
+    
 
-        // GET: api/StudentsApi
+        // GET: api/ClassRoomsApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Student>>> Getstudents()
+        public async Task<ActionResult<IEnumerable<ClassRoom>>> GetclassRooms()
         {
-            return await _context.students.ToListAsync();
+            return await _context.classRooms.ToListAsync();
         }
 
-        // GET: api/StudentsApi/5
+        // GET: api/ClassRoomsApi/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Student>> GetStudent(int id)
+        public async Task<ActionResult<ClassRoom>> GetClassRoom(int id)
         {
-            var student = await _context.students.FindAsync(id);
+            var classRoom = await _context.classRooms.FindAsync(id);
 
-            if (student == null)
+            if (classRoom == null)
             {
                 return NotFound();
             }
 
-            return student;
+            return classRoom;
         }
 
-        // PUT: api/StudentsApi/5
+        // PUT: api/ClassRoomsApi/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, Student student)
+        public async Task<IActionResult> PutClassRoom(int id, ClassRoom classRoom)
         {
-            if (id != student.StudentID)
+            if (id != classRoom.ClassRoomID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(student).State = EntityState.Modified;
+            _context.Entry(classRoom).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace testCodefirst.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StudentExists(id))
+                if (!ClassRoomExists(id))
                 {
                     return NotFound();
                 }
@@ -69,36 +69,36 @@ namespace testCodefirst.Controllers
             return NoContent();
         }
 
-        // POST: api/StudentsApi
+        // POST: api/ClassRoomsApi
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Student>> PostStudent(Student student)
+        public async Task<ActionResult<ClassRoom>> PostClassRoom(ClassRoom classRoom)
         {
-            _context.students.Add(student);
+            _context.classRooms.Add(classRoom);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStudent", new { id = student.StudentID }, student);
+            return CreatedAtAction("GetClassRoom", new { id = classRoom.ClassRoomID }, classRoom);
         }
 
-        // DELETE: api/StudentsApi/5
+        // DELETE: api/ClassRoomsApi/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStudent(int id)
+        public async Task<IActionResult> DeleteClassRoom(int id)
         {
-            var student = await _context.students.FindAsync(id);
-            if (student == null)
+            var classRoom = await _context.classRooms.FindAsync(id);
+            if (classRoom == null)
             {
                 return NotFound();
             }
 
-            _context.students.Remove(student);
+            _context.classRooms.Remove(classRoom);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool StudentExists(int id)
+        private bool ClassRoomExists(int id)
         {
-            return _context.students.Any(e => e.StudentID == id);
+            return _context.classRooms.Any(e => e.ClassRoomID == id);
         }
     }
 }

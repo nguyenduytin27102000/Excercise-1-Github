@@ -9,20 +9,19 @@ using testCodefirst.Models;
 
 namespace testCodefirst.Controllers
 {
-    public class StudentsController : Controller
+    public class ClassRoomsController : Controller
     {
-        private readonly StudentDBContext _context  = new StudentDBContext();
+        private readonly StudentDBContext _context = new StudentDBContext();
 
-      
+     
 
-        // GET: Students
+        // GET: ClassRooms
         public async Task<IActionResult> Index()
         {
-            var studentDBContext = _context.students.Include(s => s.ClassRoom);
-            return View(await studentDBContext.ToListAsync());
+            return View(await _context.classRooms.ToListAsync());
         }
 
-        // GET: Students/Details/5
+        // GET: ClassRooms/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -30,42 +29,39 @@ namespace testCodefirst.Controllers
                 return NotFound();
             }
 
-            var student = await _context.students
-                .Include(s => s.ClassRoom)
-                .FirstOrDefaultAsync(m => m.StudentID == id);
-            if (student == null)
+            var classRoom = await _context.classRooms
+                .FirstOrDefaultAsync(m => m.ClassRoomID == id);
+            if (classRoom == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(classRoom);
         }
 
-        // GET: Students/Create
+        // GET: ClassRooms/Create
         public IActionResult Create()
         {
-            ViewData["ClassRoomID"] = new SelectList(_context.classRooms, "ClassRoomID", "ClassRoomID");
             return View();
         }
 
-        // POST: Students/Create
+        // POST: ClassRooms/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentID,Name,Age,ClassRoomID")] Student student)
+        public async Task<IActionResult> Create([Bind("ClassRoomID,ClassRoomName")] ClassRoom classRoom)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(student);
+                _context.Add(classRoom);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClassRoomID"] = new SelectList(_context.classRooms, "ClassRoomID", "ClassRoomID", student.ClassRoomID);
-            return View(student);
+            return View(classRoom);
         }
 
-        // GET: Students/Edit/5
+        // GET: ClassRooms/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,23 +69,22 @@ namespace testCodefirst.Controllers
                 return NotFound();
             }
 
-            var student = await _context.students.FindAsync(id);
-            if (student == null)
+            var classRoom = await _context.classRooms.FindAsync(id);
+            if (classRoom == null)
             {
                 return NotFound();
             }
-            ViewData["ClassRoomID"] = new SelectList(_context.classRooms, "ClassRoomID", "ClassRoomID", student.ClassRoomID);
-            return View(student);
+            return View(classRoom);
         }
 
-        // POST: Students/Edit/5
+        // POST: ClassRooms/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentID,Name,Age,ClassRoomID")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("ClassRoomID,ClassRoomName")] ClassRoom classRoom)
         {
-            if (id != student.StudentID)
+            if (id != classRoom.ClassRoomID)
             {
                 return NotFound();
             }
@@ -98,12 +93,12 @@ namespace testCodefirst.Controllers
             {
                 try
                 {
-                    _context.Update(student);
+                    _context.Update(classRoom);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(student.StudentID))
+                    if (!ClassRoomExists(classRoom.ClassRoomID))
                     {
                         return NotFound();
                     }
@@ -114,11 +109,10 @@ namespace testCodefirst.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClassRoomID"] = new SelectList(_context.classRooms, "ClassRoomID", "ClassRoomID", student.ClassRoomID);
-            return View(student);
+            return View(classRoom);
         }
 
-        // GET: Students/Delete/5
+        // GET: ClassRooms/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,31 +120,30 @@ namespace testCodefirst.Controllers
                 return NotFound();
             }
 
-            var student = await _context.students
-                .Include(s => s.ClassRoom)
-                .FirstOrDefaultAsync(m => m.StudentID == id);
-            if (student == null)
+            var classRoom = await _context.classRooms
+                .FirstOrDefaultAsync(m => m.ClassRoomID == id);
+            if (classRoom == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(classRoom);
         }
 
-        // POST: Students/Delete/5
+        // POST: ClassRooms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var student = await _context.students.FindAsync(id);
-            _context.students.Remove(student);
+            var classRoom = await _context.classRooms.FindAsync(id);
+            _context.classRooms.Remove(classRoom);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool StudentExists(int id)
+        private bool ClassRoomExists(int id)
         {
-            return _context.students.Any(e => e.StudentID == id);
+            return _context.classRooms.Any(e => e.ClassRoomID == id);
         }
     }
 }
